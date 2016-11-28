@@ -1,0 +1,33 @@
+The program executes from the neurons, but it's started asking the When it does, it will ask the first neuron to activate and ask for data.
+Most probably, it will ask data to an uncalculated neuron, which will in turn ask data to another neuron... until one initializes and generates output, then that output is used for the next, and the next...
+If skinning is set to true. Fitness is also valued by the number of neurons and their order.
+If optimizing is set to true. Any node that has any kind of node that isn't being called, get's deleted in the seed. (THIS CRIPLES GROWTH A WHOLE LOT SO ONLY DO IT WHEN IT'S FINISHED)
+
+The neurons have a failsafe way of avoiding self loops by a flag variable. If someone asks for data, flag is raised, and when output is done, flag is unraised. If while getting data, flag is raised, we know there is
+a infinite loop, and therefore, the program will never exit. If that happens we set output to (0, false). Any neuron that takes an output (x, false) will copy that input as output. If output is set as (x, false)
+the fitness of the brain is -1. If the fittness of the whole batch of brains is negative (pray god that never happens), the program resets to it's previous seeds.
+
+For growth, the best performing are separated for the batch, then they multiply. For those multiplied each one suffers some kind of mutation. Those mutations are:
+ - A constant value is multiplied by a random value ranging from [-5, +5] (2 average per mutation).
+ - A node or output changes it's connection to something else. (0.4 average per mutation)
+ - A random conection gives birth to a random default node (0.2 average per mutation)
+ - The grade of a neuron grows or shrinks. (0.1 average per mutation)
+
+
+DATA : Data is a double variable (value) with a bool variable (valid).
+
+NODE TYPES
+
+Input node		->	Updated once each cycle it's called. Can be accessed multiple times.
+Output node		->	It's the final result for the operation. It's the end condition for the problem.
+Constant node	->	It's value remains the same allways. Can be accessed multiple times.
+
+Neuron node		->	The base function system. It's takes 2 Real numbers per degree of node (a node of degree 3 takes 6 data)
+					Each input is then multiplied by it's weight and the output is the sum of it's weighted inputs.
+					Also, the node has another input, activation times. It controls how many times does the node operate.
+					The node has a single unique output, that once calculated, acts as a constant node.
+					When a node is first generated the default inputs should be considered in the range [-2, +2] for weights (1) for inputs and activation.
+					The seed for a node is (activationNodeId)(Grade)(inputNode1ID)(weightNode1ID)...[inputNodeNID][weightNodeNID]
+
+BRAIN : The brain takes any given number of inputs and any number of outputs. After it's formalized. It starts the program by random (connecting Output for Input in a random way), or by
+		seed, (The seed is simply a string[] with the seeds of the output nodes and neurons). 

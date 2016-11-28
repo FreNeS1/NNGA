@@ -1,0 +1,22 @@
+Implement:
+- Neurons
+- Passive Brain
+
+TEST: PROGRAM A MULTIPLIER:
+
+NODE NUMBER		ACTIVATOR		INPUT-WEIGHT
+
+N1				C1				I1-I2
+N2				N1				I3-C1
+
+O				--				N2
+
+C1 = 1;
+
+Implement:
+- Active Brain
+	- Fitness
+	- Seed
+	- Mutation
+
+Test an adder.
