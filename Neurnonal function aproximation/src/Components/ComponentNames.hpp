@@ -4,3 +4,9 @@
 #include "Constant.hpp"
 #include "Output.hpp"
 #include "Neuron.hpp"
+
+namespace NNGA {
+
+
+
+}

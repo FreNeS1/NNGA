@@ -3,18 +3,21 @@
 namespace NNGA {
 
 	ConstantNode::ConstantNode()
-		: _data()
+		: BaseNode()
+		, _data()
 	{ }
 
 	ConstantNode::ConstantNode(Data data)
-		: _data(data)
+		: BaseNode()
+		, _data(data)
 	{ }
 
 	ConstantNode::ConstantNode(double value, bool valid)
-		: _data(value, valid)
+		: BaseNode()
+		, _data(value, valid)
 	{ }
 
-	Data ConstantNode::getdata() const
+	Data ConstantNode::getData()
 	{
 		return _data;
 	}

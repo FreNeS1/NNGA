@@ -47,6 +47,9 @@
     <ClInclude Include="src\Components\Components.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Components\ComponentNames.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\INFO.txt" />

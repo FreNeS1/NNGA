@@ -117,6 +117,7 @@
     <ClCompile Include="src\Starter.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Components\ComponentNames.hpp" />
     <ClInclude Include="src\Components\Components.hpp" />
     <ClInclude Include="src\Components\Data.hpp" />
     <ClInclude Include="src\Components\Constant.hpp" />
